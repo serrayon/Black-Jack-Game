@@ -15,9 +15,6 @@
 		FE9E6FCE28C58591000EC41D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9E6FCC28C58591000EC41D /* Main.storyboard */; };
 		FE9E6FD028C58593000EC41D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9E6FCF28C58593000EC41D /* Assets.xcassets */; };
 		FE9E6FD328C58593000EC41D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9E6FD128C58593000EC41D /* LaunchScreen.storyboard */; };
-		FE9E6FDD28C58594000EC41D /* Black_Jack_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FDC28C58594000EC41D /* Black_Jack_GameTests.swift */; };
-		FE9E6FE728C58594000EC41D /* Black_Jack_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FE628C58594000EC41D /* Black_Jack_GameUITests.swift */; };
-		FE9E6FE928C58594000EC41D /* Black_Jack_GameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FE828C58594000EC41D /* Black_Jack_GameUITestsLaunchTests.swift */; };
 		FE9E700028C58702000EC41D /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FF528C58701000EC41D /* Bank.swift */; };
 		FE9E700128C58702000EC41D /* Pot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FF628C58701000EC41D /* Pot.swift */; };
 		FE9E700228C58702000EC41D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FF728C58701000EC41D /* Card.swift */; };
@@ -59,10 +56,7 @@
 		FE9E6FCF28C58593000EC41D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE9E6FD228C58593000EC41D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE9E6FD828C58594000EC41D /* Black Jack GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black Jack GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE9E6FDC28C58594000EC41D /* Black_Jack_GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_Jack_GameTests.swift; sourceTree = "<group>"; };
 		FE9E6FE228C58594000EC41D /* Black Jack GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black Jack GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE9E6FE628C58594000EC41D /* Black_Jack_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_Jack_GameUITests.swift; sourceTree = "<group>"; };
-		FE9E6FE828C58594000EC41D /* Black_Jack_GameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_Jack_GameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FE9E6FF528C58701000EC41D /* Bank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		FE9E6FF628C58701000EC41D /* Pot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pot.swift; sourceTree = "<group>"; };
 		FE9E6FF728C58701000EC41D /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -105,8 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				FE9E6FC128C58591000EC41D /* Black Jack Game */,
-				FE9E6FDB28C58594000EC41D /* Black Jack GameTests */,
-				FE9E6FE528C58594000EC41D /* Black Jack GameUITests */,
 				FE9E6FC028C58591000EC41D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,23 +137,6 @@
 				FE9E6FD128C58593000EC41D /* LaunchScreen.storyboard */,
 			);
 			path = "Black Jack Game";
-			sourceTree = "<group>";
-		};
-		FE9E6FDB28C58594000EC41D /* Black Jack GameTests */ = {
-			isa = PBXGroup;
-			children = (
-				FE9E6FDC28C58594000EC41D /* Black_Jack_GameTests.swift */,
-			);
-			path = "Black Jack GameTests";
-			sourceTree = "<group>";
-		};
-		FE9E6FE528C58594000EC41D /* Black Jack GameUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FE9E6FE628C58594000EC41D /* Black_Jack_GameUITests.swift */,
-				FE9E6FE828C58594000EC41D /* Black_Jack_GameUITestsLaunchTests.swift */,
-			);
-			path = "Black Jack GameUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE9E6FDD28C58594000EC41D /* Black_Jack_GameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,8 +300,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE9E6FE728C58594000EC41D /* Black_Jack_GameUITests.swift in Sources */,
-				FE9E6FE928C58594000EC41D /* Black_Jack_GameUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +395,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -476,6 +449,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -502,7 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "serrayon.Black-Jack-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -529,7 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "serrayon.Black-Jack-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -547,7 +521,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "serrayon.Black-Jack-GameTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Black Jack Game.app/Black Jack Game";
 			};
@@ -566,7 +540,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "serrayon.Black-Jack-GameTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Black Jack Game.app/Black Jack Game";
 			};
@@ -583,7 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "serrayon.Black-Jack-GameUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Black Jack Game";
 			};
@@ -600,7 +574,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "serrayon.Black-Jack-GameUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Black Jack Game";
 			};
