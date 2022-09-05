@@ -207,6 +207,7 @@
 				TargetAttributes = {
 					FE9E6FBE28C58591000EC41D = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 					FE9E6FD728C58594000EC41D = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -476,7 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "serrayon.Black-Jack-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -503,7 +504,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "serrayon.Black-Jack-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
