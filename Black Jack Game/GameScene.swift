@@ -10,7 +10,15 @@ class GameScene: SKScene {
         let money25 = Money(moneyValue: .twentyFive)
         let money50 = Money(moneyValue: .fifty)
         let instructionText = SKLabelNode(text: "Place your bet")
-     
+        let pot = Pot()
+        let player1 = Player(hand: Hand(),bank: Bank())
+        let dealer = Dealer(hand: Hand())
+        var allCards = [Card]()
+        let dealerCardsY = 930 // Y position of dealer cards
+        let playerCardsY = 200 // Y position of player cards
+        var currentPlayerType:GenericPlayer = Player(hand: Hand(),bank: Bank())
+        let deck = Deck()
+    
     override func didMove(to view: SKView) {
         setupTable()
         setupMoney()
@@ -57,6 +65,31 @@ class GameScene: SKScene {
         standBtn.isHidden = true
     }
     
+    func bet(betAmount: MoneyValue ){
+        if(betAmount.rawValue > player1.bank.getBalance()){
+            print("Trying to bet more than have");
+            return
+        }else{
+            pot.addMoney(amount: betAmount.rawValue)
+            let tempMoney = Money(moneyValue: betAmount)
+            tempMoney.anchorPoint = CGPoint(x:0, y:0)
+            moneyContainer.addChild(tempMoney)
+            tempMoney.position = CGPoint(x:CGFloat(arc4random_uniform(UInt32(moneyContainer.size.width - tempMoney.size.width))), y:CGFloat(arc4random_uniform(UInt32(moneyContainer.size.height - tempMoney.size.height))))
+             dealBtn.isHidden = false;
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+                 
+        let touchLocation = touch.location(in: self)
+        let touchedNode = self.atPoint(touchLocation)
+                 
+        if(touchedNode.name == "money"){
+            let money = touchedNode as! Money
+            bet(betAmount: money.getValue())
+        }
     }
 }
