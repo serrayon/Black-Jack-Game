@@ -23,6 +23,7 @@ class GameScene: SKScene {
         setupTable()
         setupMoney()
         setupButtons()
+        currentPlayerType = player1
     }
     
     func setupTable(){
@@ -36,6 +37,7 @@ class GameScene: SKScene {
         instructionText.fontColor = UIColor.black
         addChild(instructionText)
         instructionText.position = CGPoint(x: size.width/2, y: 400)
+        deck.new()
     }
     
     func setupMoney(){
@@ -79,6 +81,132 @@ class GameScene: SKScene {
         }
     }
     
+    func deal() {
+        instructionText.text = ""
+        money10.isHidden = true;
+        money25.isHidden = true;
+        money50.isHidden = true;
+        dealBtn.isHidden = true;
+        standBtn.isHidden = false
+        hitBtn.isHidden = false
+        let tempCard = Card(suit: "card_front", value: 0)
+        tempCard.position = CGPoint(x:630, y:980)
+        addChild(tempCard)
+        tempCard.zPosition = 100
+             
+        let newCard = deck.getTopCard()
+        var whichPosition = playerCardsY
+        var whichHand = player1.hand
+        if(self.currentPlayerType is Player){
+            whichHand = player1.hand
+            whichPosition = playerCardsY;
+        } else {
+            whichHand = dealer.hand
+            whichPosition = dealerCardsY;
+        }
+             
+        whichHand.addCard(card: newCard)
+        let xPos = 50 + (whichHand.getLength()*35)
+        let moveCard = SKAction.move(to: CGPoint(x:xPos, y: whichPosition),duration: 1.0)
+        tempCard.run(moveCard, completion: { [unowned self] in
+        self.player1.setCanBet(canBet: true)
+        if(self.currentPlayerType is Dealer && self.dealer.hand.getLength() == 1){
+            self.dealer.setFirstCard(card: newCard)
+            self.allCards.append(tempCard)
+            tempCard.zPosition = 0
+        } else {
+            tempCard.removeFromParent()
+            self.allCards.append(newCard)
+            self.addChild(newCard)
+            newCard.position = CGPoint( x: xPos, y: whichPosition)
+            newCard.zPosition = 100
+        }
+        if(self.dealer.hand.getLength() < 2){
+            if(self.currentPlayerType is Player){
+                self.currentPlayerType = self.dealer
+            }else{
+                self.currentPlayerType = self.player1
+            }
+            self.deal()
+        }else if (self.dealer.hand.getLength() == 2 && self.player1.hand.getLength() == 2) {
+            if(self.player1.hand.getValue() == 21 || self.dealer.hand.getValue() == 21){
+                self.doGameOver(hasBlackJack: true)
+            } else {
+                self.standBtn.isHidden = false;
+                self.hitBtn.isHidden = false;
+            }
+        }
+                 
+        if(self.dealer.hand.getLength() >= 3 && self.dealer.hand.getValue() < 17){
+            self.deal();
+        } else if(self.player1.isYeilding() && self.dealer.hand.getValue() >= 17){
+            self.standBtn.isHidden = true
+            self.hitBtn.isHidden = true
+            self.doGameOver(hasBlackJack: false)
+        }
+        if(self.player1.hand.getValue() > 21){
+            self.standBtn.isHidden = true;
+            self.hitBtn.isHidden = true;
+            self.doGameOver(hasBlackJack: false);
+        }
+                 
+        })
+    }
+    
+    func doGameOver(hasBlackJack: Bool){
+        hitBtn.isHidden = true
+        standBtn.isHidden = true
+        let tempCardX = allCards[1].position.x
+        let tempCardY = allCards[1].position.y
+        let tempCard = dealer.getFirstCard()
+        addChild(tempCard)
+        allCards.append(tempCard)
+        tempCard.position = CGPoint(x:tempCardX,y:tempCardY)
+        tempCard.zPosition = 0
+        var winner:GenericPlayer = player1
+             
+        if(hasBlackJack){
+            if(player1.hand.getValue() > dealer.hand.getValue()){
+                //Add to players Bank Here (pot value * 1.5)
+                instructionText.text = "You Got BlackJack!";
+                moveMoneyContainer(position: playerCardsY)
+            }else{
+                //Subtract from players bank here
+                instructionText.text = "Dealer got BlackJack!";
+                moveMoneyContainer(position: dealerCardsY)
+            }
+            return
+        }
+             
+        if (player1.hand.getValue() > 21){
+            instructionText.text = "You Busted!"
+            //Subtract from players bank
+            winner = dealer
+        }else if (dealer.hand.getValue() > 21){
+            //Add to players bank
+            instructionText.text = "Dealer Busts. You Win!"
+            winner = player1
+        }else if (dealer.hand.getValue() > player1.hand.getValue()){
+            //Subtract from players bank
+            instructionText.text = "You Lose!"
+            winner = dealer
+        }else if (dealer.hand.getValue() == player1.hand.getValue()){
+             //Subtract from players bank
+            instructionText.text = "Tie - Dealer Wins!"
+            winner = dealer
+        }else if (dealer.hand.getValue() < player1.hand.getValue()){
+            //Add to players bank
+            instructionText.text="You Win!";
+            winner = player1
+        }
+             
+        if(winner is Player){
+            moveMoneyContainer(position: playerCardsY)
+        }else{
+            moveMoneyContainer(position: dealerCardsY)
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
@@ -91,5 +219,8 @@ class GameScene: SKScene {
             let money = touchedNode as! Money
             bet(betAmount: money.getValue())
         }
+        
+        if(touchedNode.name == "dealBtn"){
+            deal()
     }
 }
