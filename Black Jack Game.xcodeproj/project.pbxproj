@@ -18,6 +18,17 @@
 		FE9E6FDD28C58594000EC41D /* Black_Jack_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FDC28C58594000EC41D /* Black_Jack_GameTests.swift */; };
 		FE9E6FE728C58594000EC41D /* Black_Jack_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FE628C58594000EC41D /* Black_Jack_GameUITests.swift */; };
 		FE9E6FE928C58594000EC41D /* Black_Jack_GameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FE828C58594000EC41D /* Black_Jack_GameUITestsLaunchTests.swift */; };
+		FE9E700028C58702000EC41D /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FF528C58701000EC41D /* Bank.swift */; };
+		FE9E700128C58702000EC41D /* Pot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FF628C58701000EC41D /* Pot.swift */; };
+		FE9E700228C58702000EC41D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FF728C58701000EC41D /* Card.swift */; };
+		FE9E700328C58702000EC41D /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FF828C58701000EC41D /* Deck.swift */; };
+		FE9E700428C58702000EC41D /* GenericPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FF928C58701000EC41D /* GenericPlayer.swift */; };
+		FE9E700528C58702000EC41D /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FFA28C58701000EC41D /* Hand.swift */; };
+		FE9E700628C58702000EC41D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FFB28C58701000EC41D /* Player.swift */; };
+		FE9E700728C58702000EC41D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FFC28C58701000EC41D /* Utilities.swift */; };
+		FE9E700828C58702000EC41D /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FFD28C58701000EC41D /* Dealer.swift */; };
+		FE9E700928C58702000EC41D /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FFE28C58701000EC41D /* Money.swift */; };
+		FE9E700A28C58702000EC41D /* MoneyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9E6FFF28C58702000EC41D /* MoneyValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +63,17 @@
 		FE9E6FE228C58594000EC41D /* Black Jack GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black Jack GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9E6FE628C58594000EC41D /* Black_Jack_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_Jack_GameUITests.swift; sourceTree = "<group>"; };
 		FE9E6FE828C58594000EC41D /* Black_Jack_GameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_Jack_GameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FE9E6FF528C58701000EC41D /* Bank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		FE9E6FF628C58701000EC41D /* Pot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pot.swift; sourceTree = "<group>"; };
+		FE9E6FF728C58701000EC41D /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		FE9E6FF828C58701000EC41D /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		FE9E6FF928C58701000EC41D /* GenericPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericPlayer.swift; sourceTree = "<group>"; };
+		FE9E6FFA28C58701000EC41D /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		FE9E6FFB28C58701000EC41D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		FE9E6FFC28C58701000EC41D /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		FE9E6FFD28C58701000EC41D /* Dealer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
+		FE9E6FFE28C58701000EC41D /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		FE9E6FFF28C58702000EC41D /* MoneyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +127,17 @@
 				FE9E6FC228C58591000EC41D /* AppDelegate.swift */,
 				FE9E6FC428C58591000EC41D /* GameScene.sks */,
 				FE9E6FC628C58591000EC41D /* Actions.sks */,
+				FE9E6FF528C58701000EC41D /* Bank.swift */,
+				FE9E6FF728C58701000EC41D /* Card.swift */,
+				FE9E6FFD28C58701000EC41D /* Dealer.swift */,
+				FE9E6FF828C58701000EC41D /* Deck.swift */,
+				FE9E6FF928C58701000EC41D /* GenericPlayer.swift */,
+				FE9E6FFA28C58701000EC41D /* Hand.swift */,
+				FE9E6FFE28C58701000EC41D /* Money.swift */,
+				FE9E6FFF28C58702000EC41D /* MoneyValue.swift */,
+				FE9E6FFB28C58701000EC41D /* Player.swift */,
+				FE9E6FF628C58701000EC41D /* Pot.swift */,
+				FE9E6FFC28C58701000EC41D /* Utilities.swift */,
 				FE9E6FC828C58591000EC41D /* GameScene.swift */,
 				FE9E6FCA28C58591000EC41D /* GameViewController.swift */,
 				FE9E6FCC28C58591000EC41D /* Main.storyboard */,
@@ -264,8 +297,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9E700428C58702000EC41D /* GenericPlayer.swift in Sources */,
+				FE9E700328C58702000EC41D /* Deck.swift in Sources */,
+				FE9E700728C58702000EC41D /* Utilities.swift in Sources */,
+				FE9E700928C58702000EC41D /* Money.swift in Sources */,
+				FE9E700128C58702000EC41D /* Pot.swift in Sources */,
+				FE9E700228C58702000EC41D /* Card.swift in Sources */,
 				FE9E6FC928C58591000EC41D /* GameScene.swift in Sources */,
+				FE9E700528C58702000EC41D /* Hand.swift in Sources */,
+				FE9E700028C58702000EC41D /* Bank.swift in Sources */,
+				FE9E700828C58702000EC41D /* Dealer.swift in Sources */,
+				FE9E700A28C58702000EC41D /* MoneyValue.swift in Sources */,
 				FE9E6FCB28C58591000EC41D /* GameViewController.swift in Sources */,
+				FE9E700628C58702000EC41D /* Player.swift in Sources */,
 				FE9E6FC328C58591000EC41D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
